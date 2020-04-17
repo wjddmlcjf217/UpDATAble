@@ -30,29 +30,19 @@ class Patient extends Component {
                     </div>
                 </div>
                 <div class="profileContainer">
-                    <div>
-                        <h1>Date</h1>
+                    <div class="date">
+                        <h1>July 7, 2020{this.props.patientData.date}</h1>
                     </div>
-                    <div>
-                        <p>
-                            {this.props.patientData.date}
-                        </p>
-                    </div>
-
-                    <div>
+                    <div class="treatment">
                         <h1>Treatment and Results</h1>
-                    </div>
-                    <div>
                         <p>
-                            {this.props.patientData.treatmentAndResults}
+                            John finished treatment today and everything is looking good.{this.props.patientData.treatmentAndResults}
                         </p>
                     </div>
-                    <div>
+                    <div class="nextStep">
                         <h1>Next Steps</h1>
-                    </div>
-                    <div>
                         <p>
-                            {this.props.patientData.nextStep}
+                            If things continue to improve he will be out of here soon.{this.props.patientData.nextStep}
                         </p>
                     </div>
                 </div>
