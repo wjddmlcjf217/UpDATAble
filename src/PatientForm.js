@@ -3,6 +3,7 @@ import "./css/form.css"
 import { connect } from "react-redux";
 import * as ACTIONS from "./redux/actions";
 import store from "./store/index";
+import history from "./history";
 
 class PatientForm extends Component {
     state = {
@@ -55,6 +56,7 @@ class PatientForm extends Component {
         store.dispatch(ACTIONS.addPatientData(patientData));
         event.preventDefault();
         event.stopPropagation();
+        history.push("/Patient");
     }
 
     render() {

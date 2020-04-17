@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import logo from "./assets/logo.png"
 import "./css/navBar.css";
 
 export default class NavBar extends Component {
@@ -7,7 +8,7 @@ export default class NavBar extends Component {
             <React.Fragment>
                 <nav className="navbar navbar-dark bg-dark mb-3">
                     <div class="headingContainer">
-                        <h1 class="navHeading">UpDATAble</h1>
+                        <img class="navHeading" src={logo} alt="logo"/>
                     </div>
                 </nav>
             </React.Fragment>
