@@ -21,7 +21,7 @@
 }
 
 .name {
-    font-size: 50px;
+    font-size: 35px;
 }
 
 .imageContainer p {
@@ -45,8 +45,9 @@ p {
     margin-top: 90px;
     background-color: #24305e;
     box-shadow: 10px 10px 5px grey;
-    padding-left: 20px;
+    padding-left: 25px;
     border-radius: 5%;
+    word-wrap: break-word;
 }
 
 .treatment h1 {
@@ -68,6 +69,8 @@ p {
     padding-left: 20px;
     border-radius: 5%;
     margin-left: 15%;
+    word-wrap: break-word;
+    margin-right: 5%;
 }
 
 .nextStep h1 {

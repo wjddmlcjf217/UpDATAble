@@ -25,13 +25,13 @@ class Patient extends Component {
                     </div>
                     <div>
                         <p>
-                            Fair{this.props.patientData.medicalCondition}
+                            {this.props.patientData.medicalCondition}
                         </p>
                     </div>
                 </div>
                 <div class="profileContainer">
                     <div class="date">
-                        <h1>{this.props.patientData.date}</h1>
+                        <h1>Date: {this.props.patientData.date}</h1>
                     </div>
                     <div class="treatment">
                         <h1>Treatment and Results</h1>
