@@ -60,7 +60,7 @@ class PatientForm extends Component {
     render() {
         const { patientID, date, medicalCondition, treatmentAndResults, nextStep } = this.state
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form class="patientForm" onSubmit={this.handleSubmit}>
                 <div>
 
                      <div>

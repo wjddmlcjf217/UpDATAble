@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
+import profilePic from './assets/profile.png';
+import './css/patient.css';
 import store from './store/index';
 
 function mapStateToProps(store){
@@ -13,45 +15,46 @@ class Patient extends Component {
     render() {
         return (
             <>
-                <div>
-                    <h1>Patient Name</h1>
+                <div class="imageContainer">
+                    <img id="profilePic" src={profilePic} alt="Profile"/>
+                    <div>
+                        <h1 class='name'>John Doe{this.props.patientData.patientID}</h1>
+                    </div>
+                    <div>
+                        <h2>Current Condition:</h2>
+                    </div>
+                    <div>
+                        <p>
+                            Fair{this.props.patientData.medicalCondition}
+                        </p>
+                    </div>
                 </div>
-                <div>
-                    <p>
-                        {this.props.patientData.patientID}
-                    </p>
-                </div>
-                <div>
-                    <h1>Date</h1>
-                </div>
-                <div>
-                    <p>
-                        {this.props.patientData.date}
-                    </p>
-                </div>
-                <div>
-                    <h1>Medical State</h1>
-                </div>
-                <div>
-                    <p>
-                        {this.props.patientData.medicalCondition}
-                    </p>
-                </div>
-                <div>
-                    <h1>Treatment and Results</h1>
-                </div>
-                <div>
-                    <p>
-                        {this.props.patientData.treatmentAndResults}
-                    </p>
-                </div>
-                <div>
-                    <h1>Next Steps</h1>
-                </div>
-                <div>
-                    <p>
-                        {this.props.patientData.nextStep}
-                    </p>
+                <div class="profileContainer">
+                    <div>
+                        <h1>Date</h1>
+                    </div>
+                    <div>
+                        <p>
+                            {this.props.patientData.date}
+                        </p>
+                    </div>
+
+                    <div>
+                        <h1>Treatment and Results</h1>
+                    </div>
+                    <div>
+                        <p>
+                            {this.props.patientData.treatmentAndResults}
+                        </p>
+                    </div>
+                    <div>
+                        <h1>Next Steps</h1>
+                    </div>
+                    <div>
+                        <p>
+                            {this.props.patientData.nextStep}
+                        </p>
+                    </div>
                 </div>
             </>
         )
