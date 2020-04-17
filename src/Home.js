@@ -5,7 +5,14 @@ import history from "./history";
 export default class Home extends Component {
     render() {
         return (
-            <Button variant="btn btn-success" onClick={() => history.push('/PatientForm')}>Click Button to View App</Button>
+            <>
+                <div>
+                    <Button variant="btn btn-success" onClick={() => history.push('/PatientForm')}>Doctor Workflow</Button>
+                </div>
+                <div>
+                    <Button variant="btn btn-success" onClick={() => history.push('/Patient')}>Patient View</Button>
+                </div>
+            </>
         )
-    }
+    }    
 }
