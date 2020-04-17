@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import Form from 'react-bootstrap/Form';
 import "./css/style.css"
+import { connect } from "react-redux";
+import * as ACTIONS from "./redux/actions";
+import store from "./store/index";
 
-export default class PatientForm extends Component {
+class PatientForm extends Component {
     state = {
         patientID: '',
         date: '',
@@ -43,7 +46,16 @@ export default class PatientForm extends Component {
     }
 
     handleSubmit = event => {
-        alert(`${this.state.patientID} ${this.state.date} ${this.state.medicalCondition} ${this.state.treatmentAndResults} ${this.state.nextStep}`);
+        let patientData = {
+            patientID: this.state.patientID,
+            date: this.state.date,
+            medicalCondition: this.state.medicalCondition,
+            treatmentAndResults: this.state.treatmentAndResults,
+            nextStep: this.state.nextStep
+        }
+        store.dispatch(ACTIONS.addPatientData(patientData));
+        event.preventDefault();
+        event.stopPropagation();
     }
 
     render() {
@@ -66,10 +78,10 @@ export default class PatientForm extends Component {
                     <div>
                         <label>Date</label>
                     </div>
-                    <div>          
-                        <input 
-                        type='textarea' 
-                        value={date} 
+                    <div>
+                        <input
+                        type='textarea'
+                        value={date}
                         onChange={this.dateChangeHandler}
                         />
                     </div>
@@ -105,3 +117,5 @@ export default class PatientForm extends Component {
         )
     };
 };
+
+export default connect()(PatientForm);

@@ -5,12 +5,16 @@ import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Routes from './Routes';
 import NavBar from './NavBar';
+import { Provider } from "react-redux";
+import store from "./store/index";
 
 ReactDOM.render(
-  <Router>
-    <NavBar />
-    <Routes />
-  </Router>,
+  <Provider store={store}>
+    <Router>
+      <NavBar />
+      <Routes />
+    </Router>
+  </Provider>,
   document.getElementById('root')
 );
 
