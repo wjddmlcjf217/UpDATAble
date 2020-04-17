@@ -46,17 +46,22 @@ class PatientForm extends Component {
     }
 
     handleSubmit = event => {
-        let patientData = {
-            patientID: this.state.patientID,
-            date: this.state.date,
-            medicalCondition: this.state.medicalCondition,
-            treatmentAndResults: this.state.treatmentAndResults,
-            nextStep: this.state.nextStep
+        if (window.confirm("Are you sure the information is correct?")) {
+            let patientData = {
+                patientID: this.state.patientID,
+                date: this.state.date,
+                medicalCondition: this.state.medicalCondition,
+                treatmentAndResults: this.state.treatmentAndResults,
+                nextStep: this.state.nextStep
+            }
+            store.dispatch(ACTIONS.addPatientData(patientData));
+            event.preventDefault();
+            event.stopPropagation();
+            history.push("/Patient");
+        } else {
+            event.preventDefault();
+            event.stopPropagation();
         }
-        store.dispatch(ACTIONS.addPatientData(patientData));
-        event.preventDefault();
-        event.stopPropagation();
-        history.push("/Patient");
     }
 
     render() {
@@ -107,7 +112,7 @@ class PatientForm extends Component {
                     </div>
 
                 </div>
-                <button type="submit">Submit</button>
+                <button type="submit" on>Submit</button>
             </form>
         )
     };
