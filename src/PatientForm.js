@@ -76,7 +76,7 @@ export default class PatientForm extends Component {
 
                     <div>
                         <label>Medical State</label>
-                        <select>
+                        <select value={medicalCondition} onChange={this.medicalConditionChangeHandler}>
                         <option>Select...</option>
                         <option>Undetermined</option>
                         <option>Good</option>
