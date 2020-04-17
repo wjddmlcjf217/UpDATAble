@@ -1,0 +1,21 @@
+nav {
+    background-color: #f76c6c;
+    overflow: hidden;
+    height: 100px;
+}
+
+.headingContainer {
+    align-items: flex-start;
+}
+
+.navHeading {
+    position: fixed;
+    float: left;
+    color: rgb(20, 20, 20);
+    font-size: 50px;
+    font-weight: bold;
+    margin-left: 10px;
+    vertical-align: middle;
+    margin-top: 14px;
+    margin-left: 20px;
+}
