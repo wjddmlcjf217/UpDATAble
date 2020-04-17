@@ -4,9 +4,11 @@ import './css/index.css';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Routes from './Routes';
+import NavBar from './NavBar';
 
 ReactDOM.render(
   <Router>
+    <NavBar />
     <Routes />
   </Router>,
   document.getElementById('root')
