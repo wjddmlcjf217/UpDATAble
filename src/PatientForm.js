@@ -4,14 +4,29 @@ import "./css/style.css"
 
 export default class PatientForm extends Component {
     state = {
-        condition: '',
+        patientID: '',
+        date: '',
+        medicalCondition: '',
         treatmentAndResults: '',
-        nextStep: ''
+        nextStep: '',
+
     };
 
-    conditionChangeHandler = event => {
+    patientIDChangeHandler = event => {
         this.setState({
-            condition: event.target.value
+            patientID: event.target.value
+        });
+    };
+
+    dateChangeHandler = event => {
+        this.setState({
+            date: event.target.value
+        });
+    };
+
+    medicalConditionChangeHandler = event => {
+        this.setState({
+            medicalCondition: event.target.value
         });
     };
 
@@ -24,15 +39,15 @@ export default class PatientForm extends Component {
     nextStepChangeHandler = event => {
         this.setState({
             nextStep: event.target.value
-        })
+        });
     }
 
     handleSubmit = event => {
-        alert(`${this.state.condition} ${this.state.treatmentAndResults} ${this.state.nextStep}`);
+        alert(`${this.state.patientID} ${this.state.date} ${this.state.medicalCondition} ${this.state.treatmentAndResults} ${this.state.nextStep}`);
     }
 
     render() {
-        const { condition, treatmentAndResults, nextStep } = this.state
+        const { patientID, date, medicalCondition, treatmentAndResults, nextStep } = this.state
         return (
             <form onSubmit={this.handleSubmit}>
                 <div>
@@ -40,12 +55,11 @@ export default class PatientForm extends Component {
                      <div>
                         <label>Patient ID</label>
                     </div>
-
                     <div>          
                         <input 
                         type='textarea' 
-                        value={condition} 
-                        onChange={this.conditionChangeHandler}
+                        value={patientID} 
+                        onChange={this.patientIDChangeHandler}
                         />
                     </div>
 
@@ -55,8 +69,8 @@ export default class PatientForm extends Component {
                     <div>          
                         <input 
                         type='textarea' 
-                        value={condition} 
-                        onChange={this.conditionChangeHandler}
+                        value={date} 
+                        onChange={this.dateChangeHandler}
                         />
                     </div>
 
