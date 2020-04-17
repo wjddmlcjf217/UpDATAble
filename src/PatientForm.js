@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Form from 'react-bootstrap/Form';
+import "./css/style.css"
 
 export default class PatientForm extends Component {
     state = {
