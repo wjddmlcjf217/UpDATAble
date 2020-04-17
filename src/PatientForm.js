@@ -36,8 +36,21 @@ export default class PatientForm extends Component {
         return (
             <form onSubmit={this.handleSubmit}>
                 <div>
+
+                     <div>
+                        <label>Patient ID</label>
+                    </div>
+
+                    <div>          
+                        <input 
+                        type='textarea' 
+                        value={condition} 
+                        onChange={this.conditionChangeHandler}
+                        />
+                    </div>
+
                     <div>
-                        <label>Condition of Patient</label>
+                        <label>Date</label>
                     </div>
                     <div>          
                         <input 
@@ -46,6 +59,19 @@ export default class PatientForm extends Component {
                         onChange={this.conditionChangeHandler}
                         />
                     </div>
+
+                    <div>
+                        <label>Medical State</label>
+                        <select>
+                        <option>Select...</option>
+                        <option>Undetermined</option>
+                        <option>Good</option>
+                        <option>Fair</option>
+                        <option>Serious</option>
+                        <option>Critical</option>
+                        </select>
+                    </div>
+
                     <div>
                         <label>Treatment and Results</label>
                     </div>
@@ -58,6 +84,7 @@ export default class PatientForm extends Component {
                     <div>
                         <textarea rows="5" cols="50" value={nextStep} onChange={this.nextStepChangeHandler}></textarea>
                     </div>
+
                 </div>
                 <button type="submit">Submit</button>
             </form>
