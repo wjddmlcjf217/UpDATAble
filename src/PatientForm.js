@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Form from 'react-bootstrap/Form';
 import "./css/style.css"
 import { connect } from "react-redux";
 import * as ACTIONS from "./redux/actions";
