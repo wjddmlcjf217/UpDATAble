@@ -5,24 +5,15 @@ const Immutable = require("seamless-immutable").static;
 
 const initialState = {
     currentPatientId: "",
-    patientData: [],
+    patientData: {},
     isCritical: false
 };
 
 function rootReducer(state = initialState, action){
     switch(action.type) {
         case ACTIONS.ADD_PATIENT_DATA: {
-            // return {
-            //     ...state,
-            //     patientData:[...state.patientData, action.patientData]
-            // };
-            return Immutable.setIn(state, ["patientData"], [action.patientData]);
-            // state.currentPatientId = action.patientData.status;
-            // return state;
+            return Immutable.setIn(state, ["patientData"], action.patientData);
         }
-        // case ACTIONS.PATIENT_DATA_CHANGED: {
-        //     let updatedState = state.pat
-        // }
         case ACTIONS.PATIENT_STATUS_CRITICAL: {
             return Immutable.setIn(state, ["isCritical"], action.isCritical);
         }
