@@ -76,13 +76,7 @@ class PatientForm extends Component {
 
                     <div>
                         <label>Date</label>
-                    </div>
-                    <div>
-                        <input
-                        type='textarea'
-                        value={date}
-                        onChange={this.dateChangeHandler}
-                        />
+                        <input style={{maxWidth: 175}} type="date" value={date} onChange={this.dateChangeHandler}></input>
                     </div>
 
                     <div>
