@@ -18,7 +18,7 @@ class Patient extends Component {
                 <div class="imageContainer">
                     <img id="profilePic" src={profilePic} alt="Profile"/>
                     <div>
-                        <h1 class='name'>John Doe{this.props.patientData.patientID}</h1>
+                        <h1 class='name'>{this.props.patientData.patientID}</h1>
                     </div>
                     <div>
                         <h2>Current Condition:</h2>
@@ -31,18 +31,18 @@ class Patient extends Component {
                 </div>
                 <div class="profileContainer">
                     <div class="date">
-                        <h1>July 7, 2020{this.props.patientData.date}</h1>
+                        <h1>{this.props.patientData.date}</h1>
                     </div>
                     <div class="treatment">
                         <h1>Treatment and Results</h1>
                         <p>
-                            John finished treatment today and everything is looking good.{this.props.patientData.treatmentAndResults}
+                            {this.props.patientData.treatmentAndResults}
                         </p>
                     </div>
                     <div class="nextStep">
                         <h1>Next Steps</h1>
                         <p>
-                            If things continue to improve he will be out of here soon.{this.props.patientData.nextStep}
+                            {this.props.patientData.nextStep}
                         </p>
                     </div>
                 </div>
